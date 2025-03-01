@@ -1,8 +1,9 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import numpy as np
-from trainer import XGBPricePredictor
+from trainer import XGBPricePredictor  # Assuming this is your custom class
 import joblib
 from sklearn.model_selection import train_test_split
 
@@ -10,6 +11,21 @@ app = FastAPI(
     title="XGBRegression Playground",
     description="A backend for training and predicting with XGBoost",
     version="1.0.0"
+)
+
+# Add CORS middleware
+origins = [
+    "http://localhost:3000",              # Local development (Next.js)
+    "https://x10xmasai.bhaweshagrawal.com.np",   # Replace with your deployed frontend domain
+    # Add more origins as needed
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,               # Allowed origins
+    allow_credentials=True,              # Allow cookies/auth if needed
+    allow_methods=["GET", "POST"],       # Allow GET and POST methods
+    allow_headers=["Content-Type"],      # Allow JSON content type
 )
 
 # Load dataset (for training and feature names)
@@ -110,3 +126,8 @@ async def predict(input_data: PredictionInput):
     prediction = pretrained_model.predict(features)
     
     return {"prediction": float(prediction[0])}
+
+# Run the app (for local testing)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
