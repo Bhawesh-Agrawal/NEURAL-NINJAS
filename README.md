@@ -114,7 +114,7 @@ jupyter notebook
 
 We have custom function after running all cells you will be promted to choode from 2 option either you can upload a csv file or input a array and the model will predict the output for you.
 
-Open and explore **EDA.ipynb** and **Model\_Training.ipynb**
+Open and explore **EDA.ipynb** and **Model**
 
 ## API Endpoints
 
@@ -122,13 +122,6 @@ Open and explore **EDA.ipynb** and **Model\_Training.ipynb**
 | ------ | ---------- | ------------------------------------------- |
 | `POST` | `/train`   | Train the model with custom hyperparameters |
 | `POST` | `/predict` | Predict airline profit using input features |            |
-
-## Results & Performance
-
-- The model achieved an **R² score of X.XX** and **RMSE of XX.XX** (update with actual values)
-- Key insights from EDA:
-  - Feature A has the highest correlation with profit
-  - Feature B impacts results significantly
 
 ## Future Enhancements
 
