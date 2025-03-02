@@ -1,6 +1,5 @@
 # Airline Profit Prediction - FastAPI Backend & Next.js Frontend
-
-<img src = "https://www.playbook.com/s/bhawesh-agrawal/YtT82fNvi9fEJcpQBrc5RjLc" />
+![image](https://github.com/user-attachments/assets/0615e753-0a53-4de2-8943-83e90a259a77)
 ## Overview
 
 This repository contains a **FastAPI backend** that allows users to train a machine learning model with custom hyperparameters and predict airline profits based on provided data. Additionally, it includes a **Next.js frontend** for user interaction, a **Jupyter Notebook** demonstrating the model's performance using **XGBRegressor**, and an **Exploratory Data Analysis (EDA)** of the dataset.
@@ -28,7 +27,7 @@ This project was developed for a **hackathon**, where the challenge was to train
 - Uses **XGBRegressor** for high-accuracy predictions.
 - Trained with custom hyperparameters.
 - Evaluated using metrics like RMSE and R².
-- Results documented in **Model\_Training.ipynb**.
+- Results documented in **Model.ipynb**.
 
 ### 2. FastAPI Backend
 
@@ -61,7 +60,7 @@ This project was developed for a **hackathon**, where the challenge was to train
 
 ### Prerequisites
 
-Ensure you have **Python 3.8+** and **Node.js** installed.
+Ensure you have **Python 3.11** and **Node.js** installed.
 
 ### Clone the repository
 
