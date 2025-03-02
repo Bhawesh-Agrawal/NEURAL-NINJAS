@@ -16,7 +16,7 @@ app = FastAPI(
 # Add CORS middleware
 origins = [
     "http://localhost:3000",              # Local development (Next.js)
-    "https://x10xmasai.bhaweshagrawal.com.np",   # Replace with your deployed frontend domain
+    "https://neuralninjas.bhaweshagrawal.com.np",   # Replace with your deployed frontend domain
     # Add more origins as needed
 ]
 
