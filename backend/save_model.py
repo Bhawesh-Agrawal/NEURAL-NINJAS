@@ -11,9 +11,21 @@ y = data["Profit (USD)"]
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
+
+param_grid = {
+    'n_estimators': 200,
+    'learning_rate': 0.1,
+    'max_depth': 7,
+    'min_child_weight': 1,
+    'gamma': 0.1,
+    'subsample': 0.8,
+    'colsample_bytree': 0.8,
+    'objective': 'reg:squarederror',
+    'random_state': 42
+}
     
 # Initialize and train model with default parameters
-xgb_model = XGBPricePredictor()
+xgb_model = XGBPricePredictor(params=param_grid)
 xgb_model.fit(X_train, y_train, X_val=X_val, y_val=y_val)
     
 # Evaluate model
@@ -28,11 +40,7 @@ print("\nTest metrics:")
 for metric, value in test_metrics.items():
     print(f"{metric}: {value:.4f}")
 
-param_grid = {
-    'n_estimators': [50, 100],
-    'max_depth': [3, 5, 7],
-    'learning_rate': [0.05, 0.1]
-}
+
 
 joblib.dump(xgb_model, 'xgb_price_predictor_optimized.pkl')
 print("Optimized model saved as 'xgb_price_predictor_optimized.pkl'")
