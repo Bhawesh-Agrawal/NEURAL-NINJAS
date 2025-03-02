@@ -1,6 +1,6 @@
 # Airline Profit Prediction - FastAPI Backend & Next.js Frontend
 
-{https://www.playbook.com/s/bhawesh-agrawal/YtT82fNvi9fEJcpQBrc5RjLc}
+[alt text](https://www.playbook.com/s/bhawesh-agrawal/YtT82fNvi9fEJcpQBrc5RjLc)
 
 ## Overview
 
