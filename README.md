@@ -1,7 +1,6 @@
 # Airline Profit Prediction - FastAPI Backend & Next.js Frontend
 
-[alt text](https://www.playbook.com/s/bhawesh-agrawal/YtT82fNvi9fEJcpQBrc5RjLc)
-
+<img src = "https://www.playbook.com/s/bhawesh-agrawal/YtT82fNvi9fEJcpQBrc5RjLc" />
 ## Overview
 
 This repository contains a **FastAPI backend** that allows users to train a machine learning model with custom hyperparameters and predict airline profits based on provided data. Additionally, it includes a **Next.js frontend** for user interaction, a **Jupyter Notebook** demonstrating the model's performance using **XGBRegressor**, and an **Exploratory Data Analysis (EDA)** of the dataset.
