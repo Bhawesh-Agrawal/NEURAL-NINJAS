@@ -1,5 +1,5 @@
-# Airline Profit Prediction - FastAPI Backend & Next.js Frontend
-![image](https://github.com/user-attachments/assets/0615e753-0a53-4de2-8943-83e90a259a77)
+# Aviation Prediction - FastAPI Backend & Next.js Frontend
+![image](https://images.unsplash.com/photo-1623888676435-d3b01b4d1dc0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ## Link to over video presentation
 [Video Presentation](https://drive.google.com/file/d/1H3JEX1B2Ztt5r1WHHNq8P6cLJL5edy5X/view?usp=drive_link)
