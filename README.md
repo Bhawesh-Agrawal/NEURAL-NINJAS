@@ -2,11 +2,11 @@
 ![image](https://github.com/user-attachments/assets/0615e753-0a53-4de2-8943-83e90a259a77)
 
 ## Link to over video presentation
-![Video Presentation](https://drive.google.com/file/d/1H3JEX1B2Ztt5r1WHHNq8P6cLJL5edy5X/view?usp=drive_link)
+[Video Presentation](https://drive.google.com/file/d/1H3JEX1B2Ztt5r1WHHNq8P6cLJL5edy5X/view?usp=drive_link)
 
 ## Link to Google Drive
 - Consists the whole code with charts and datasets.
-![Google Drive](https://drive.google.com/drive/folders/1ZwUdBWrEKH_JP1TwYBpcl7lyhVVUnDkF?usp=drive_link)
+[Google Drive](https://drive.google.com/drive/folders/1ZwUdBWrEKH_JP1TwYBpcl7lyhVVUnDkF?usp=drive_link)
 
 ## Overview
 
