@@ -66,16 +66,12 @@ export default function Playground() {
     };
 
     try {
-      const response = await fetch(
-        "https://xgbregressor.bhaweshagrawal.com.np/train",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
-      if (!response.ok)
-        throw new Error(`Train API failed with status ${response.status}`);
+      const response = await fetch("https://xgbregressor.bhaweshagrawal.com.np/train", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error(`Train API failed with status ${response.status}`);
       const data: TrainResponse = await response.json();
       setTrainData(data);
     } catch (err: any) {
@@ -89,18 +85,12 @@ export default function Playground() {
   const getPlotImage = () => {
     if (!trainData) return null;
     switch (plotType) {
-      case "training":
-        return trainData.training_history_plots;
-      case "feature":
-        return trainData.feature_importance_plot;
-      case "prediction":
-        return trainData.predictions_plot;
-      case "scatter":
-        return trainData.residuals_plots;
-      case "derivative":
-        return trainData.residuals_distribution_plots;
-      default:
-        return null;
+      case "training": return trainData.training_history_plots;
+      case "feature": return trainData.feature_importance_plot;
+      case "prediction": return trainData.predictions_plot;
+      case "scatter": return trainData.residuals_plots;
+      case "derivative": return trainData.residuals_distribution_plots;
+      default: return null;
     }
   };
 
@@ -122,9 +112,7 @@ export default function Playground() {
             </span>
           </PopoverTrigger>
           <PopoverContent>
-            <p className="text-sm">
-              {metricExplanations[key] || "Metric explanation not available."}
-            </p>
+            <p className="text-sm">{metricExplanations[key] || "Metric explanation not available."}</p>
           </PopoverContent>
         </Popover>
         <span>{value.toFixed(4)}</span>
@@ -152,9 +140,7 @@ export default function Playground() {
       <div className="flex flex-col lg:flex-row gap-6">
         <Card className="w-full lg:w-3/4 shadow-md">
           <CardHeader>
-            <CardTitle className="text-lg dark:text-white">
-              Data Visualization
-            </CardTitle>
+            <CardTitle className="text-lg dark:text-white">Data Visualization</CardTitle>
           </CardHeader>
           <CardContent>
             {loading ? (
@@ -165,12 +151,7 @@ export default function Playground() {
               <div className="flex justify-center">
                 {(() => {
                   const imageSrc = getPlotImage();
-                  if (!imageSrc)
-                    return (
-                      <p className="text-red-500">
-                        No image data for {plotType}
-                      </p>
-                    );
+                  if (!imageSrc) return <p className="text-red-500">No image data for {plotType}</p>;
                   return (
                     <img
                       src={imageSrc}
@@ -183,9 +164,7 @@ export default function Playground() {
             ) : (
               <div className="text-center text-gray-500 dark:text-gray-400">
                 <p>Selected Plot Type: {plotType}</p>
-                <p className="mt-4">
-                  Click "Fetch Data" to load results from the API.
-                </p>
+                <p className="mt-4">Click "Fetch Data" to load results from the API.</p>
               </div>
             )}
           </CardContent>
@@ -193,149 +172,51 @@ export default function Playground() {
 
         <Card className="w-full lg:w-1/4 shadow-md">
           <CardHeader>
-            <CardTitle className="text-lg dark:text-white">
-              Hyperparameters
-            </CardTitle>
+            <CardTitle className="text-lg dark:text-white">Hyperparameters</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <Label htmlFor="nEstimators" className="dark:text-white">
-                n_estimators: {nEstimators}
-              </Label>
-              <Slider
-                id="nEstimators"
-                value={[nEstimators]}
-                onValueChange={(value) => setNEstimators(value[0])}
-                min={10}
-                max={1000}
-                step={10}
-                className="mt-2"
-              />
+              <Label htmlFor="nEstimators" className="dark:text-white">n_estimators: {nEstimators}</Label>
+              <Slider id="nEstimators" value={[nEstimators]} onValueChange={(value) => setNEstimators(value[0])} min={10} max={1000} step={10} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="learningRate" className="dark:text-white">
-                Learning Rate: {learningRate}
-              </Label>
-              <Slider
-                id="learningRate"
-                value={[learningRate]}
-                onValueChange={(value) => setLearningRate(value[0])}
-                min={0.01}
-                max={1}
-                step={0.01}
-                className="mt-2"
-              />
+              <Label htmlFor="learningRate" className="dark:text-white">Learning Rate: {learningRate}</Label>
+              <Slider id="learningRate" value={[learningRate]} onValueChange={(value) => setLearningRate(value[0])} min={0.01} max={1} step={0.01} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="maxDepth" className="dark:text-white">
-                Max Depth: {maxDepth}
-              </Label>
-              <Slider
-                id="maxDepth"
-                value={[maxDepth]}
-                onValueChange={(value) => setMaxDepth(value[0])}
-                min={1}
-                max={20}
-                step={1}
-                className="mt-2"
-              />
+              <Label htmlFor="maxDepth" className="dark:text-white">Max Depth: {maxDepth}</Label>
+              <Slider id="maxDepth" value={[maxDepth]} onValueChange={(value) => setMaxDepth(value[0])} min={1} max={20} step={1} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="minChildWeight" className="dark:text-white">
-                Min Child Weight: {minChildWeight}
-              </Label>
-              <Slider
-                id="minChildWeight"
-                value={[minChildWeight]}
-                onValueChange={(value) => setMinChildWeight(value[0])}
-                min={0.1}
-                max={10}
-                step={0.1}
-                className="mt-2"
-              />
+              <Label htmlFor="minChildWeight" className="dark:text-white">Min Child Weight: {minChildWeight}</Label>
+              <Slider id="minChildWeight" value={[minChildWeight]} onValueChange={(value) => setMinChildWeight(value[0])} min={0.1} max={10} step={0.1} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="gamma" className="dark:text-white">
-                Gamma: {gamma}
-              </Label>
-              <Slider
-                id="gamma"
-                value={[gamma]}
-                onValueChange={(value) => setGamma(value[0])}
-                min={0}
-                max={5}
-                step={0.1}
-                className="mt-2"
-              />
+              <Label htmlFor="gamma" className="dark:text-white">Gamma: {gamma}</Label>
+              <Slider id="gamma" value={[gamma]} onValueChange={(value) => setGamma(value[0])} min={0} max={5} step={0.1} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="subsample" className="dark:text-white">
-                Subsample: {subsample}
-              </Label>
-              <Slider
-                id="subsample"
-                value={[subsample]}
-                onValueChange={(value) => setSubsample(value[0])}
-                min={0.1}
-                max={1}
-                step={0.05}
-                className="mt-2"
-              />
+              <Label htmlFor="subsample" className="dark:text-white">Subsample: {subsample}</Label>
+              <Slider id="subsample" value={[subsample]} onValueChange={(value) => setSubsample(value[0])} min={0.1} max={1} step={0.05} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="colsampleBytree" className="dark:text-white">
-                Colsample Bytree: {colsampleBytree}
-              </Label>
-              <Slider
-                id="colsampleBytree"
-                value={[colsampleBytree]}
-                onValueChange={(value) => setColsampleBytree(value[0])}
-                min={0.1}
-                max={1}
-                step={0.05}
-                className="mt-2"
-              />
+              <Label htmlFor="colsampleBytree" className="dark:text-white">Colsample Bytree: {colsampleBytree}</Label>
+              <Slider id="colsampleBytree" value={[colsampleBytree]} onValueChange={(value) => setColsampleBytree(value[0])} min={0.1} max={1} step={0.05} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="testSize" className="dark:text-white">
-                Test Size: {testSize}
-              </Label>
-              <Slider
-                id="testSize"
-                value={[testSize]}
-                onValueChange={(value) => setTestSize(value[0])}
-                min={0.1}
-                max={0.5}
-                step={0.05}
-                className="mt-2"
-              />
+              <Label htmlFor="testSize" className="dark:text-white">Test Size: {testSize}</Label>
+              <Slider id="testSize" value={[testSize]} onValueChange={(value) => setTestSize(value[0])} min={0.1} max={0.5} step={0.05} className="mt-2" />
             </div>
             <div>
-              <Label htmlFor="validationSize" className="dark:text-white">
-                Validation Size: {validationSize}
-              </Label>
-              <Slider
-                id="validationSize"
-                value={[validationSize]}
-                onValueChange={(value) => setValidationSize(value[0])}
-                min={0.1}
-                max={0.5}
-                step={0.05}
-                className="mt-2"
-              />
+              <Label htmlFor="validationSize" className="dark:text-white">Validation Size: {validationSize}</Label>
+              <Slider id="validationSize" value={[validationSize]} onValueChange={(value) => setValidationSize(value[0])} min={0.1} max={0.5} step={0.05} className="mt-2" />
             </div>
-            <Button
-              className="w-full"
-              onClick={fetchTrainData}
-              disabled={loading}
-            >
+            <Button className="w-full" onClick={fetchTrainData} disabled={loading}>
               {loading ? "Fetching..." : "Fetch Data"}
             </Button>
             {trainData && (
               <div className="mt-6">
-                <Label className="text-lg font-semibold dark:text-white">
-                  Test Metrics
-                </Label>
+                <Label className="text-lg font-semibold dark:text-white">Test Metrics</Label>
                 <div className="mt-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-md text-sm">
                   {formatMetrics(trainData.test_metrics)}
                 </div>

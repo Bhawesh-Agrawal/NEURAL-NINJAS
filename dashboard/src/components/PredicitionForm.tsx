@@ -88,8 +88,13 @@ export default function PredictionForm() {
         throw new Error(`Predict API failed with status ${response.status}`);
       const data: PredictResponse = await response.json();
       setPredictData(data);
-    } catch (err: any) {
-      setError(err.message || "An error occurred while predicting.");
+    } catch (err: unknown) {
+      // Changed 'any' to 'unknown'
+      if (err instanceof Error) {
+        setError(err.message || "An error occurred while predicting.");
+      } else {
+        setError("An unknown error occurred.");
+      }
       console.error("Predict Fetch Error:", err);
     } finally {
       setLoading(false);
