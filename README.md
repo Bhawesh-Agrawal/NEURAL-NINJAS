@@ -104,6 +104,8 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
+We have custom function after running all cells you will be promted to choode from 2 option either you can upload a csv file or input a array and the model will predict the output for you.
+
 Open and explore **EDA.ipynb** and **Model\_Training.ipynb**
 
 ## API Endpoints
