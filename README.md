@@ -4,6 +4,10 @@
 ## Link to over video presentation
 ![Video Presentation](https://drive.google.com/file/d/1H3JEX1B2Ztt5r1WHHNq8P6cLJL5edy5X/view?usp=drive_link)
 
+## Link to Google Drive
+- Consists the whole code with charts and datasets.
+![Google Drive](https://drive.google.com/drive/folders/1ZwUdBWrEKH_JP1TwYBpcl7lyhVVUnDkF?usp=drive_link)
+
 ## Overview
 
 This repository contains a **FastAPI backend** that allows users to train a machine learning model with custom hyperparameters and predict airline profits based on provided data. Additionally, it includes a **Next.js frontend** for user interaction, a **Jupyter Notebook** demonstrating the model's performance using **XGBRegressor**, and an **Exploratory Data Analysis (EDA)** of the dataset.
